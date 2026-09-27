@@ -1,1 +1,1 @@
-"""AI models used by the RoboLab dashboard."""
+"""AI models used by the ROOBGEN dashboard."""

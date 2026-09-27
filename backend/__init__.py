@@ -1,1 +1,1 @@
-"""FastAPI services for RoboLab."""
+"""FastAPI services for ROOBGEN."""

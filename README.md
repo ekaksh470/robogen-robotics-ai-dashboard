@@ -1,6 +1,6 @@
-# RoboLab Robotics AI Control Center
+# ROOBGEN Robotics AI Training Dashboard
 
-A responsive, dark robotics-lab dashboard for four interactive training and simulation demos. The interface uses HTML, CSS, and browser JavaScript; Python and FastAPI provide the models, state, and simulation APIs.
+A robotics AI training and simulation dashboard for learning, exploring, and editing navigation and robotic manipulation tasks. It combines a Python reinforcement-learning model, FastAPI simulation services, and an interactive HTML, CSS, and JavaScript control interface.
 
 ## Start the dashboard
 
@@ -13,22 +13,16 @@ python -m pip install -r requirements.txt
 python -m uvicorn backend.app:app --reload
 ```
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The navigation Q-learning demo starts training when the API starts. Use the left navigation to switch between the four simulations.
+The navigation Q-learning demo starts training when the API starts. Use the left navigation to switch between the four simulations.
 
 On macOS or Linux, activate the environment with `source .venv/bin/activate` instead.
-
-## Deploy to Vercel
-
-Import this GitHub repository into Vercel, or link it with the Vercel CLI and run `vercel --prod`. The `pyproject.toml` entrypoint tells Vercel to serve the FastAPI app in `backend/app.py`; its HTML, CSS, JavaScript, and simulation API share the same origin. Dependencies are read from `requirements.txt`.
-
-The training and simulation state is held in memory for this demo. It can reset when a serverless instance restarts and is not shared between separate instances; persistent training state would need a database or external worker.
 
 ## Simulations
 
 1. **AI Navigation Training** — a Python tabular Q-learning agent learns a route through a 16 × 9 grid. Live episode return, TD loss, exploration rate, rolling success rate, training progress, and a policy route are shown in the dashboard. Training can be paused, resumed, reset, and configured.
 2. **Robot Navigation Playground** — edit a grid, drag the robot and goal, add obstacles, move or resize blocks, remove a selected obstacle with the toolbar or Delete key, change map dimensions, select a preset, and run or pause the A* path-following simulation.
 3. **Robotic Hand Vertical Training** — adjust object height, hand speed, and difficulty while a simple alignment trainer updates its reward and successful-alignment history.
-4. **Robotic Hand Pickup and Storage** — run a simulated detect → align → pick → store sequence with varied objects, bin placement, recovery events, action history, and pickup statistics.
+4. **Robotic Hand Pickup and Storage** — add, move, resize, and remove parts; reposition the hand; and run a simulated detect → align → pick → store sequence with varied objects, recovery events, action history, and pickup statistics.
 
 The hand views are simulated demonstrations. They do not connect to physical robot hardware. The navigation learner is real Q-learning; object handling and vertical alignment use lightweight stateful simulation logic so a hardware or model integration can replace them later.
 
@@ -51,4 +45,4 @@ assets/            Optional static assets (the current UI draws its visuals)
 - `GET /api/hand/training`; `POST /api/hand/training/config`, `/start`, `/pause`, `/step`, `/reset`
 - `GET /api/pickup`; `POST /api/pickup/start`, `/pause`, `/step`, `/reset`
 
-The Figma-first dashboard screen is available at [RoboLab — Robotics Control Center](https://www.figma.com/design/vevG2WzzBMU9P233Y2dQBn).
+The dashboard design is available at [ROOBGEN — Robotics Control Center](https://www.figma.com/design/vevG2WzzBMU9P233Y2dQBn).

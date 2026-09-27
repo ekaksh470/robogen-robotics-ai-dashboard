@@ -1,4 +1,4 @@
-"""FastAPI application and JSON API for the RoboLab dashboard."""
+"""FastAPI application and JSON API for the ROOBGEN dashboard."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "frontend"
 
 app = FastAPI(
-    title="RoboLab Robotics AI Control Center",
+    title="ROOBGEN Robotics AI Control Center",
     description="Training and simulation APIs for four interactive robotics demonstrations.",
     version="1.0.0",
 )
@@ -141,6 +141,14 @@ def hand_training_reset() -> dict[str, Any]:
 @app.get("/api/pickup")
 def pickup_status() -> dict[str, Any]:
     return pickup_simulation.snapshot()
+
+
+@app.post("/api/pickup/config")
+def pickup_config(payload: dict[str, Any] = Body(...)) -> dict[str, Any]:
+    try:
+        return pickup_simulation.configure(payload)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
 @app.post("/api/pickup/start")
