@@ -9,14 +9,14 @@ from typing import Any
 
 OBJECT_SEED = [
     {"id": "OBJ-01", "color": "cyan", "label": "Bearing", "size": "S", "weight": 0.18, "x": 0.12, "y": 0.25},
-    {"id": "OBJ-02", "color": "violet", "label": "Adapter", "size": "M", "weight": 0.42, "x": 0.31, "y": 0.5},
+    {"id": "OBJ-02", "color": "slate", "label": "Adapter", "size": "M", "weight": 0.42, "x": 0.31, "y": 0.5},
     {"id": "OBJ-03", "color": "amber", "label": "Gear", "size": "L", "weight": 0.71, "x": 0.55, "y": 0.32},
     {"id": "OBJ-04", "color": "green", "label": "Sensor", "size": "S", "weight": 0.24, "x": 0.63, "y": 0.62},
     {"id": "OBJ-05", "color": "rose", "label": "Coupler", "size": "M", "weight": 0.53, "x": 0.2, "y": 0.72},
     {"id": "OBJ-06", "color": "blue", "label": "Housing", "size": "L", "weight": 0.88, "x": 0.48, "y": 0.76},
 ]
 
-OBJECT_COLORS = {"cyan", "violet", "amber", "green", "rose", "blue"}
+OBJECT_COLORS = {"cyan", "slate", "amber", "green", "rose", "blue"}
 
 
 class PickupSimulation:
@@ -66,7 +66,7 @@ class PickupSimulation:
                     seen_ids.add(object_id)
                     old = previous.get(object_id, {})
                     size = entry.get("size") if entry.get("size") in {"S", "M", "L"} else "M"
-                    color = entry.get("color") if entry.get("color") in OBJECT_COLORS else "violet"
+                    color = entry.get("color") if entry.get("color") in OBJECT_COLORS else "slate"
                     updated.append({
                         "id": object_id,
                         "label": str(entry.get("label", "Part"))[:24],

@@ -1,4 +1,4 @@
-"""FastAPI application and JSON API for the ROOBGEN dashboard."""
+"""FastAPI application and JSON API for the ROBOGEN dashboard."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "frontend"
 
 app = FastAPI(
-    title="ROOBGEN Robotics AI Control Center",
+    title="ROBOGEN Robotics AI Control Center",
     description="Training and simulation APIs for four interactive robotics demonstrations.",
     version="1.0.0",
 )

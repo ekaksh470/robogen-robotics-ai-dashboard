@@ -1,5 +1,5 @@
 [project]
-name = "roobgen-robotics-ai-dashboard"
+name = "robogen-robotics-ai-dashboard"
 version = "0.1.0"
 description = "Interactive robotics AI training and simulation dashboard"
 requires-python = ">=3.10"

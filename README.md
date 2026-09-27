@@ -1,4 +1,4 @@
-# ROOBGEN Robotics AI Training Dashboard
+# ROBOGEN Robotics AI Training Dashboard
 
 A robotics AI training and simulation dashboard for learning, exploring, and editing navigation and robotic manipulation tasks. It combines a Python reinforcement-learning model, FastAPI simulation services, and an interactive HTML, CSS, and JavaScript control interface.
 
@@ -45,4 +45,4 @@ assets/            Optional static assets (the current UI draws its visuals)
 - `GET /api/hand/training`; `POST /api/hand/training/config`, `/start`, `/pause`, `/step`, `/reset`
 - `GET /api/pickup`; `POST /api/pickup/start`, `/pause`, `/step`, `/reset`
 
-The dashboard design is available at [ROOBGEN — Robotics Control Center](https://www.figma.com/design/vevG2WzzBMU9P233Y2dQBn).
+The dashboard design is available at [ROBOGEN — Robotics Control Center](https://www.figma.com/design/vevG2WzzBMU9P233Y2dQBn).
