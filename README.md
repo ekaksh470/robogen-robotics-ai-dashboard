@@ -17,6 +17,12 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The navigation Q-learning d
 
 On macOS or Linux, activate the environment with `source .venv/bin/activate` instead.
 
+## Deploy to Vercel
+
+Import this GitHub repository into Vercel, or link it with the Vercel CLI and run `vercel --prod`. The `pyproject.toml` entrypoint tells Vercel to serve the FastAPI app in `backend/app.py`; its HTML, CSS, JavaScript, and simulation API share the same origin. Dependencies are read from `requirements.txt`.
+
+The training and simulation state is held in memory for this demo. It can reset when a serverless instance restarts and is not shared between separate instances; persistent training state would need a database or external worker.
+
 ## Simulations
 
 1. **AI Navigation Training** — a Python tabular Q-learning agent learns a route through a 16 × 9 grid. Live episode return, TD loss, exploration rate, rolling success rate, training progress, and a policy route are shown in the dashboard. Training can be paused, resumed, reset, and configured.
