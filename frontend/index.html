@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07111b" />
+    <meta name="description" content="RoboLab robotics AI training and simulation control center." />
+    <title>RoboLab · Robotics AI Control Center</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Simulation navigation">
+        <a class="brand" href="#navigation-training" aria-label="RoboLab home">
+          <span class="brand-mark">R</span>
+          <span class="brand-copy"><strong>ROBOLAB</strong><small>ROBOTICS AI STUDIO</small></span>
+        </a>
+        <div class="sidebar-section-label">WORKSPACE</div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="navigation-training"><span class="nav-number">01</span><span>AI Navigation Training</span><i class="nav-live"></i></button>
+          <button class="nav-item" data-view="navigation-playground"><span class="nav-number">02</span><span>Navigation Playground</span></button>
+          <button class="nav-item" data-view="hand-training"><span class="nav-number">03</span><span>Hand · Vertical Training</span></button>
+          <button class="nav-item" data-view="pickup-storage"><span class="nav-number">04</span><span>Hand · Pickup &amp; Storage</span></button>
+        </nav>
+        <div class="sidebar-section-label system-label">SYSTEM</div>
+        <section class="model-card">
+          <div class="model-card-heading"><span class="status-dot"></span><strong>NAV-POLICY v1.4</strong></div>
+          <p id="modelReadyText">Ready for inference</p>
+          <div class="progress-track"><span id="modelQualityBar" style="width:86%"></span></div>
+        </section>
+        <div class="sidebar-footer"><span class="footer-mark">◈</span> RoboLab Control Center <span class="version">v1.4</span></div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="breadcrumb" id="breadcrumb">SIMULATIONS <span>/</span> NAVIGATION</div>
+          <div class="topbar-status">
+            <span class="top-status"><i class="status-dot"></i>MODEL ONLINE</span>
+            <span class="top-status"><i class="status-dot cyan-dot"></i><span id="trainingStateLabel">TRAINING ACTIVE</span></span>
+            <span class="health-pill"><i class="status-dot"></i>SYSTEM HEALTH <b id="healthValue">98%</b></span>
+          </div>
+          <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+        </header>
+        <main id="mainView" tabindex="-1"></main>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </body>
+</html>
